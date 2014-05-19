@@ -1,0 +1,1 @@
+angular.module('drinkapp', ['ionic']);

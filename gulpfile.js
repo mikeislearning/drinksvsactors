@@ -61,7 +61,7 @@ gulp.task('watch',['connect', 'serve'], function() {
 	gulp.watch(paths.coffee, ['coffee'])
 
 	gulp.watch([
-	    './www/**/*.html',
+	    './www/templates/*.html',
 	    './www/css/*.css',
 	    './www/js/**/*.js'
 	], function (event) {

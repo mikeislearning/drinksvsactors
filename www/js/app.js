@@ -3,7 +3,14 @@ var app;
 app = angular.module('drinkapp', ['ionic']);
 
 app.run(function($ionicPlatform) {
-  return $ionicPlatform.ready(function() {});
+  return $ionicPlatform.ready(function() {
+    if (window.cordova && window.cordova.plugins.Keyboard) {
+      cordova.plugins.Keyboard.hideKeyboardAccessoryBar(true);
+    }
+    if (window.StatusBar) {
+      return StatusBar.styleDefault();
+    }
+  });
 });
 
 app.config(function($stateProvider, $urlRouterProvider) {
@@ -18,11 +25,11 @@ app.config(function($stateProvider, $urlRouterProvider) {
         templateUrl: "templates/home.html"
       }
     }
-  }).state("tab.settings", {
-    url: "/settings",
+  }).state("tab.defaults", {
+    url: "/defaults",
     views: {
-      "tab-settings": {
-        templateUrl: "templates/settings.html"
+      "tab-defaults": {
+        templateUrl: "templates/defaults.html"
       }
     }
   }).state("tab.home-new-game-settings", {

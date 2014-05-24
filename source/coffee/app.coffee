@@ -1,19 +1,23 @@
 app = angular.module 'drinkapp', ['ionic']
 
+#-----------------------------------------------------------------
+# Ionic Dependencies
+#-----------------------------------------------------------------
+
+
 app.run ($ionicPlatform) ->
   $ionicPlatform.ready ->
+  	cordova.plugins.Keyboard.hideKeyboardAccessoryBar true  if window.cordova and window.cordova.plugins.Keyboard
+  	StatusBar.styleDefault()  if window.StatusBar
+
+
+#-----------------------------------------------------------------
+# Router
+#-----------------------------------------------------------------
 
 
 app.config ($stateProvider, $urlRouterProvider) ->
 
-  # Ionic uses AngularUI Router which uses the concept of states
-  # Learn more here: https://github.com/angular-ui/ui-router
-  # Set up the various states which the app can be in.
-  # Each state's controller can be found in controllers.js
-
-  # setup an abstract state for the tabs directive
-
-  # Each tab has its own nav history stack:
   $stateProvider.state("tab",
     url: "/tab"
     abstract: true
@@ -24,11 +28,11 @@ app.config ($stateProvider, $urlRouterProvider) ->
       "tab-home":
         templateUrl: "templates/home.html"
         # controller: "IndexCtrl"
-  ).state("tab.settings",
-    url: "/settings"
+  ).state("tab.defaults",
+    url: "/defaults"
     views:
-      "tab-settings":
-        templateUrl: "templates/settings.html"
+      "tab-defaults":
+        templateUrl: "templates/defaults.html"
         # controller: "IndexCtrl"
   ).state("tab.home-new-game-settings",
     url: "/home/:gameNew"

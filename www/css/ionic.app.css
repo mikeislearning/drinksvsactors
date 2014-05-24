@@ -6430,3 +6430,6 @@ a.button {
 .platform-c:not(.enable-transitions) * {
   -webkit-transition: none !important;
   transition: none !important; }
+
+body {
+  cursor: url('http://ionicframework.com/img/finger.png'), auto; }

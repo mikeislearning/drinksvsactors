@@ -9,11 +9,14 @@
 
 app.controller 'SettingsCtrl', ($scope) ->
 	$scope.settingsList = [
-	   {text: "Nationalities",
+	   {text: "Movie Characters",
 	   checked: true}
 	   ,
+	   {text: "Nationalities",
+	   checked: false}
+	   ,
 	   {text: "Dialects",
-	   checked: true}
+	   checked: false}
 	   ,
 	   {text: "Actors",
 	   checked: false}

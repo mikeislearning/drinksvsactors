@@ -1,0 +1,38 @@
+<!--
+New Game Settings
+-->
+
+<ion-view title="Select Settings">
+  <ion-content class="has-header padding" ng-controller='SettingsCtrl'>
+	  <div class="settings-section">
+
+			<h2>Impersonation Types </h2>
+			<ion-toggle ng-repeat="item in settingsList"
+			                   ng-model="item.checked"
+			                   ng-checked="item.checked">
+			         {{ item.text }}
+			       </ion-toggle>
+			<br>
+			<label class="item item-input item-select">
+			  <div class="input-label">
+			    Number of Players
+			  </div>
+			  <select>
+			    <option>3</option>
+			    <option selected>4</option>
+			    <option>5</option>
+			    <option>6</option>
+			    <option>7</option>
+			    <option>8</option>
+			    <option>9</option>
+			    <option>10</option>
+			  </select>
+			</label>
+			<br>
+			<a href="#/tab/current-game" class="button button-balanced">Start Game </a>
+		</div>
+  </ion-content>
+</ion-view>
+
+
+
